@@ -1,9 +1,8 @@
 import { Router } from 'express';
 
 const router: Router = Router();
+import { humanitarianAidsController } from '../controllers/humanitarian-aids.controller';
 
-router.get('/', (req,res) => {
-    res.send('I am healthy');
-});
+router.get('/', humanitarianAidsController.index);
 
 export default router;
