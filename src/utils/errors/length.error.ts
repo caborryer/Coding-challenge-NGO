@@ -1,7 +1,7 @@
 import { ErrorSystem } from "./error.utils";
 
-export class LengthError extends ErrorSystem {
+export class DataError extends ErrorSystem {
     constructor(message:string){
-        super(message, LengthError.name);
+        super(message, DataError.name);
     }
 }

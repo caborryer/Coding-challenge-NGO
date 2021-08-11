@@ -1,8 +1,16 @@
 import { Request, Response } from "express";
+import {syncWithExternalSystem} from "../services/synchronizer.service";
 
 class HumanitarianAidsController {
-    public index(req: Request, res:Response) {
-        res.send('I am healthy')
+    constructor(){};
+    async index(req: Request, res:Response) {
+        try {
+            const data = await syncWithExternalSystem()
+            console.log(data["iati-activities"][0], 'hre')
+        } catch(err){
+            console.log(err)
+        }
+        // res.send('I am healthy')
     };
 }
 
