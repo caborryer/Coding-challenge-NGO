@@ -7,12 +7,10 @@ const{externalURL} = config;
 
 const logger = log4js.getLogger();
 
-console.log(externalURL)
 export async function syncWithExternalSystem() {
     if (!externalURL) {
         throw new DataError('Dont get any data');
     }
-
     let URL = externalURL;
     return axios.get(URL)
         .then(response => {

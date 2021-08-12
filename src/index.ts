@@ -1,16 +1,8 @@
-import express from 'express';
+import app from "./app";
+import { createConnection } from "./db";
 
-import IndexRoutes from './routes' 
-const app = express();
-import './database';
+createConnection();
 
-app.set('port',  process.env.PORT || 3000);
-
-app.use(express.json());
-app.use(express.urlencoded({extended:false}));
-
-app.use('/health', IndexRoutes)
-
-app.listen(app.get('port'), ()=>{
-    console.log(`Server on port ${app.get('port')}`);
-})
+app.listen(app.get("port"), () => {
+  console.log("Server on port", app.get("port"));
+});

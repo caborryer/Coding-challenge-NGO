@@ -1,8 +1,8 @@
-import { Router } from 'express';
-
-const router: Router = Router();
-import { humanitarianAidsController } from '../controllers/humanitarian-aids.controller';
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const router = express_1.Router();
+const humanitarian_aids_controller_1 = require("../controllers/humanitarian-aids.controller");
 /**
  * @swagger
  * components:
@@ -45,7 +45,6 @@ import { humanitarianAidsController } from '../controllers/humanitarian-aids.con
  *        type: string
  *      description: the task id
  */
-
 /**
  * @swagger
  * /api/humanitarian-data:
@@ -62,7 +61,5 @@ import { humanitarianAidsController } from '../controllers/humanitarian-aids.con
  *              items:
  *                $ref: '#/components/schemas/humanitarianAid'
  */
-
-router.get('/humanitarian-data', humanitarianAidsController.index);
-
-export default router;
+router.get('/humanitarian-data', humanitarian_aids_controller_1.humanitarianAidsController.index);
+exports.default = router;
