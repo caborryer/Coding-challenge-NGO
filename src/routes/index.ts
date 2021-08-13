@@ -49,7 +49,7 @@ import { humanitarianAidsController } from '../controllers/humanitarian-aids.con
 /**
  * @swagger
  * /api/humanitarian-data:
- *  get:
+ *  post:
  *    summary: Return a list of monetary aid sent to Sudan
  *    tags: [Humanitarian aid]
  *    responses:
@@ -63,6 +63,7 @@ import { humanitarianAidsController } from '../controllers/humanitarian-aids.con
  *                $ref: '#/components/schemas/humanitarianAid'
  */
 
-router.get('/humanitarian-data', humanitarianAidsController.index);
+router.post('/humanitarian-data', humanitarianAidsController.index);
+router.get('/prueba', humanitarianAidsController.getData);
 
 export default router;

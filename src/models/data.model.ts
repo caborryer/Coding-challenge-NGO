@@ -2,15 +2,15 @@ import mongoose, {Schema, model}  from "mongoose";
 
  export interface Data extends mongoose.Document {
     year: string;
-    donor:string;
-    aids:number;
+    ngo:number;
+    aid:number;
 }
 
 
 const DataSchema = new Schema({
     year:String,
-    donor:String,
-    aids:Number,
+    ngo:Number,
+    aid:Number,
 });
 
-export default model<Data>('Book', DataSchema);
+export default model<Data>('Data',DataSchema);
